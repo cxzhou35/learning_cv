@@ -184,7 +184,7 @@ Research interest
 ## 课程资料
 
 - 课程仓库: [cxzhou35/learning_cv](https://github.com/cxzhou35/learning_cv) <i class="fab fa-github"></i>
-- 课程主页: [zicx.top/learning_cv](https://github.com/cxzhou35/learning_cv) <i class="fab fa-github"></i>
+- 课程主页: [zicx.top/learning_cv](https://zicx.top/learning_cv/slides/site/2023-fall-pbfx) <i class="fab fa-github"></i>
 - 课程答疑专区: [learning_cv/discussions/2](https://github.com/cxzhou35/learning_cv/discussions/2)
 
 > 本学期的课程均为线下课程，不再有线上直播和回放❗
@@ -331,7 +331,6 @@ Research interest
 - 开始工作之前先做好规划，包括短期和长期的
 - 构建自己熟悉且方便快捷的工作环境与工作流
 - 每天接触一点感兴趣的新知识，保持新鲜感
-
 
 
 <!--s-->
