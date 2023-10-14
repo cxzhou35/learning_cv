@@ -1,6 +1,6 @@
 LECNO = 0
 FLAGS = --scripts https://cdn.tonycrane.cc/heti/heti.js,heti_worker.js --template template.html
-BASE_DIR = ../src/
+BASE_DIR = ../site/2023-fall-pbfx
 
 .PHONY: live build all clean live-home build-home
 
@@ -12,7 +12,7 @@ build:
 	@echo "Building lec$(LECNO) slides..."
 	@reveal-md lec$(LECNO).md $(FLAGS) --static $(BASE_DIR)/lec$(LECNO) --assets-dir assets
 	@rm $(BASE_DIR)/lec$(LECNO)/lec$(LECNO).html
-	@cp -r lec$(LECNO) $(BASE_DIR)/lec$(LECNO)/
+	@cp -r assets/lec$(LECNO) $(BASE_DIR)/lec$(LECNO)/
 
 live-home:
 	@echo "Previewing home slides..."
