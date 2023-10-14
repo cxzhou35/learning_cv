@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>{{{title}}}</title>
+    {{#absoluteUrl}}
+    <meta property="og:title" content="{{{title}}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{{absoluteUrl}}}/featured-slide.jpg" />
+    <meta property="og:url" content="{{{absoluteUrl}}}" />
+    {{/absoluteUrl}}
+    <link rel="shortcut icon" href="{{{base}}}/favicon.ico" />
+    <link rel="stylesheet" href="{{{base}}}/dist/reset.css" />
+    <link rel="stylesheet" href="{{{base}}}/dist/reveal.css" />
+    <link rel="stylesheet" href="{{{themeUrl}}}" id="theme" />
+    <link rel="stylesheet" href="{{{base}}}{{{highlightThemeUrl}}}" />
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
+
+    {{#cssPaths}}
+    <link rel="stylesheet" href="{{{.}}}" />
+    {{/cssPaths}} {{#watch}}
+
+    <script>
+      document.write(
+        '<script src="http://' +
+          (location.host || "localhost").split(":")[0] +
+          ':35729/livereload.js?snipver=1"></' +
+          "script>",
+      );
+    </script>
+    {{/watch}}
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">{{{slides}}}</div>
+    </div>
+
+    <script src="{{{base}}}/dist/reveal.js"></script>
+
+    <script src="{{{base}}}/plugin/markdown/markdown.js"></script>
+    <script src="{{{base}}}/plugin/highlight/highlight.js"></script>
+    <script src="{{{base}}}/plugin/zoom/zoom.js"></script>
+    <script src="{{{base}}}/plugin/notes/notes.js"></script>
+    <script src="{{{base}}}/plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default',
+        slideNumber: true,
+        menu: {
+          themes: false,
+          width: "wide",
+          transitions: false,
+          markers: true,
+          hideMissingTitles: true,
+          openButton: true,
+          openSlideNumber: true,
+          custom: [
+            { title: 'Lectures', icon: '<i class="fas fa-external-link-alt">', content: getLecturesMenu() },
+          ]
+        },
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMenu
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {{{revealOptionsStr}}}, queryOptions);
+
+      function getLecturesMenu() {
+        var lectures = [
+          { name: "#0 课程介绍和计算机视觉概论", src: "../lec0/"},
+          // { name: "#1 Shell 基础及 CLI 工具推荐", src: "../lec1/"},
+          // { name: "#2 Git/GitHub 基础介绍", src: "../lec2/"},
+          // { name: "#3 Markdown 语法及应用", src: "../lec3/"},
+          // { name: "#4 LaTeX 排版简要介绍", src: "../lec4/"},
+          // { name: "#5 如何排出规范、美观的文档", src: "../lec5/"},
+          // { name: "#6 网络/网站基础知识概述", src: "../lec6/"},
+        ]
+        var lecturesMenu = '<ul class="slide-menu-items">';
+        for (var i=0; i < lectures.length; i++) {
+          lecturesMenu += '<li class="slide-menu-item"><a href="' + lectures[i].src + '" style="text-decoration:none">' + lectures[i].name + '</a></li>';
+        }
+        lecturesMenu += '</ul>';
+        return lecturesMenu;
+      }
+    </script>
+
+    {{#scriptPaths}}
+    <script src="{{{.}}}"></script>
+    {{/scriptPaths}}
+
+    <script>
+      Reveal.initialize(options).then(() => {
+        document
+          .querySelector(".backgrounds")
+          .setAttribute(
+            "style",
+            document.querySelector(".slides").style.cssText,
+          );
+      });
+      Reveal.on("overviewshown", (event) => {
+        document.querySelector(".backgrounds").setAttribute("style", "");
+      });
+      Reveal.on("overviewhidden", (event) => {
+        document
+          .querySelector(".backgrounds")
+          .setAttribute(
+            "style",
+            document.querySelector(".slides").style.cssText,
+          );
+      });
+      Reveal.on("resize", (event) => {
+        document
+          .querySelector(".backgrounds")
+          .setAttribute(
+            "style",
+            document.querySelector(".slides").style.cssText,
+          );
+      });
+    </script>
+  </body>
+</html>
+
