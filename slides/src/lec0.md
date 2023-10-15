@@ -31,7 +31,8 @@ revealOptions:
     <p>By <a href="https://github.com/cxzhou35">@Chenxu Zhou</a></p>
     <div style="text-align: right; margin-top: 2em; margin-right: 1em;">
       <p>2023.10.14</p>
-      <p>Powered by <a href="https://github.com/webpro/reveal-md">@reveal-md</p>
+      <p>Powered by <a href="https://github.com/webpro/reveal-md">@reveal-md</a></p>
+      <p>template copyright <a href="https://github.com/TonyCrane">@TonyCrane<i class="fab fa-github"></i></a></p>
     </div>
   </div>
 </div>

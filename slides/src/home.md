@@ -51,3 +51,5 @@ revealOptions:
 
 <div style="text-align: right; color: #888; margin-top: 0; margin-right: 5em; font-size: 21px;" class="heti-skip">*持续更新</div>
 
+<div style="text-align: center;  font-size: 21px;" class="heti-skip">template copyright <a href="https://github.com/TonyCrane">@TonyCrane</a></div>
+
