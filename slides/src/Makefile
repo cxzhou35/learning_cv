@@ -14,7 +14,9 @@ build:
 	@mkdir -p $(BASE_DIR)/pdfs
 	@rm $(BASE_DIR)/lec$(LECNO)/lec$(LECNO).html
 	@cp -r assets/lec$(LECNO) $(BASE_DIR)/lec$(LECNO)/
-	@cp pdfs/lec$(LECNO).pdf $(BASE_DIR)/pdfs/lec$(LECNO).pdf
+	@if [ -f pdfs/lec$(LECNO).pdf ]; then \
+		cp pdfs/lec$(LECNO).pdf $(BASE_DIR)/pdfs/lec$(LECNO).pdf; \
+	fi
 
 live-home:
 	@echo "Previewing home slides..."
