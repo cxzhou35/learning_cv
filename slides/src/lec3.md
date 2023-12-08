@@ -154,7 +154,6 @@ revealOptions:
     - 可以带星号表示不编号（正常会带三级编号）
 - 使用 \tableofcontents 生成目录（新的一章/一节）
     - 生成目录需要编译两次
-    - 可以通过 \addcontentsline{toc}{*section*}{*name*} 手动添加目录项
 - \appendix 之后为附录，编号从 A 开始
 
 <!--v-->
