@@ -13,7 +13,6 @@ revealOptions:
     width: 1000
 ---
 
-
 <div class="middle center" style="position: relative;">
   <div style="width: 100%; display: inline-block; vertical-align: top; margin-top: 1em">
   <img src="./assets/cse_logo.png" style="margin-bottom: 1em">
