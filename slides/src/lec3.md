@@ -156,7 +156,6 @@ revealOptions:
     - 生成目录需要编译两次
     - 可以通过 \addcontentsline{toc}{*section*}{*name*} 手动添加目录项
 - \appendix 之后为附录，编号从 A 开始
-{{path1}}
 
 <!--v-->
 
