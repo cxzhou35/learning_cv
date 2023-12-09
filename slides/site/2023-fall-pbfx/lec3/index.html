@@ -48,12 +48,12 @@
 ## Table of Contents
 
 1. LaTeX 排版简介
-    1. 基础 LaTeX 语法
-    2. 数学公式
-    3. 常用环境
+   1. 基础 LaTeX 语法
+   2. 数学公式
+   3. 常用环境
 2. 文献引用
-    1. 引用方法与格式
-    2. 版权意识与版权声明
+   1. 引用方法与格式
+   2. 版权意识与版权声明
 
 </script></section></section><section ><section data-markdown><script type="text/template">
 
@@ -77,31 +77,107 @@
 
 - 安装：[一份简短的关于 LaTeX 安装的介绍](https://github.com/OsbertWang/install-latex-guide-zh-cn)
 - 学习：[一份（不太）简短的 LaTeX2e 介绍](https://github.com/CTeX-org/lshort-zh-cn)（即 lshort）
-    - 或安装 TeXLive 后直接通过 texdoc lshort-zh-cn 命令打开
+  - 或安装 TeXLive 后直接通过 texdoc lshort-zh-cn 命令打开
 - 其他参考：
-    - 符号大全：[The Comprehensive LaTeX Symbol List](https://www.ctan.org/pkg/comprehensive)
-    - 手写查询：[Detexify](http://detexify.kirelabs.org/classify.html)
-    - [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
-    - [LaTeX Math Wikibook](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
-    - [LaTeX StackExchange](https://tex.stackexchange.com/)
-    - [LearnLaTeX.org](https://www.learnlatex.org/en/)
+  - 符号大全：[The Comprehensive LaTeX Symbol List](https://www.ctan.org/pkg/comprehensive)
+  - 手写查询：[Detexify](http://detexify.kirelabs.org/classify.html)
+  - [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
+  - [LaTeX Math Wikibook](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+  - [LaTeX StackExchange](https://tex.stackexchange.com/)
+  - [LearnLaTeX.org](https://www.learnlatex.org/en/)
 
 </script></section><section data-markdown><script type="text/template">
 
+## LaTeX 命令、代码结构
+
+- 命令（控制序列）以 `\` 开头，对大小写敏感，如 `\LaTeX` -> $\LaTeX$
+- 有些命令会对后续内容产生影响，可以用 `{}` 限定作用范围，如 {\bf bold}
+- 命令可以接收参数，[] 中为可选参数，{} 中为必选参数，逗号分隔
+- 一组常见的命令是**环境**
+  ```latex
+  \begin{environment}[optional args]{required args}
+  ...
+  \end{environment}
+  ```
+- 文件结构
+  ```latex
+  \documentclass{article} % 百分号为注释
+  % 导言区，调用宏包、定义命令、进行文档设置等
+  \begin{document}
+  % 正文
+  \end{document} % 后续忽略
+  ```
+
+</script></section><section data-markdown><script type="text/template">
+
+## 文档类与宏包
+
+- LaTeX 文档开头必须包含 documentclass 指定文档类
+  - LaTeX 提供的基础文档类有 article report book 等
+  - 可以通过可选参数配置字号、纸张大小等
+  ```latex
+  \documentclass[11pt,a4paper,twoside]{article}
+  ```
+- 宏包相当于第三方库，可以引入更丰富的扩展功能
+  ```latex
+  \usepackage[options]{package}
+  \usepackage{package1, package2}
+  ```
+  - 需要确保已经安装，否则会报错
+  - TeXLive full 会自带大部分会用到的宏包
+  - `texdoc package` 可以查看宏包文档
+
+</script></section><section data-markdown><script type="text/template">
+
+## 字体样式和字号
+
+- 两种修改字体样式的命令 {\bfseries bold} \textbf{bold}
+  - 常用第二种
+  - 都是“内置”字体的不同样式，自定义字体自行查阅
+  - 常用的有：\textbf \textit \texttt \textsf \textsc \textsl
+- 一种形式的命令来修改字号 {\tiny some text}
+  - 从小到大：\tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+
+```latex
+\textbf{bold} \textit{italic} \texttt{typewriter}
+\textsf{sans serif} \textsc{Small Caps} \textsl{slanted}
+
+{\tiny tiny} {\scriptsize scriptsize} {\footnotesize footnotesize}
+{\small small} {\normalsize normalsize} {\large large}
+{\Large Large} {\LARGE LARGE} {\huge huge} {\Huge Huge}
+```
+
+</script></section><section data-markdown><script type="text/template">
+
+## 章节和目录
+
+- 应该对文档合理的分割为章、节、小节等，层次依次为
+  ```latex
+  \chapter{...} \section{...} \subsection{...} \subsubsection{...}
+  \paragraph{...} \subparagraph{...}
+  ```
+  - 其中 \chapter 仅适用于 book 和 report 文档类
+  - 可以加入可选参数表示短标题（显示在目录和页眉页脚中）
+  - 可以带星号表示不编号（正常会带三级编号）
+- 使用 \tableofcontents 生成目录（新的一章/一节）
+  - 生成目录需要编译两次
+- \appendix 之后为附录，编号从 A 开始
+
+</script></section><section data-markdown><script type="text/template">
 
 ## 图片
 
 - 需要使用 graphicx 宏包 \usepackage{graphicx}
 - \includegraphics[options]{filename}
-    - options：
-        - width=...：宽度；height=...：高度
-        - scale=...：缩放比例；angle=...：旋转角度（逆时针）
-    - filename：可以是相对路径，也可以是绝对路径
-        - 不能包含空格，建议全英文
-        - 可以省略后缀名，会自动按照一定顺序搜索
+  - options：
+    - width=...：宽度；height=...：高度
+    - scale=...：缩放比例；angle=...：旋转角度（逆时针）
+  - filename：可以是相对路径，也可以是绝对路径
+    - 不能包含空格，建议全英文
+    - 可以省略后缀名，会自动按照一定顺序搜索
 - \graphicspath{{path1}{path2}...} 设置图片搜索路径
 - 可以为 graphicx 或文档类设置 draft 选项
-    - 显示等大图片框架，而非实际插入图片
+  - 显示等大图片框架，而非实际插入图片
 
 </script></section><section data-markdown><script type="text/template">
 
@@ -109,15 +185,15 @@
 
 - 编写数学公式推荐载入 [amsmath 宏包](https://ctan.org/pkg/amsmath?lang=en)
 - 两种排版方式
-    - 行内公式，用一对 $ 包裹
-    - 行间公式，有几种方法：
-        - equation 环境（带编号），\notag 或 equations* 取消编号
-        - 一对 $$ 包裹或 <span>\\[</span>...\\] 包裹或 displaymath 环境
-        - 其他多行环境 multiline align 等
+  - 行内公式，用一对 $ 包裹
+  - 行间公式，有几种方法：
+    - equation 环境（带编号），\notag 或 equations* 取消编号
+    - 一对 $$ 包裹或 <span>\\[</span>...\\] 包裹或 displaymath 环境
+    - 其他多行环境 multiline align 等
 - 工具
-    - [Mathpix](https://mathpix.com/)（公式识别）
-    - [MathType](https://www.wiris.com/en/mathtype/)（公式编辑器）
-    - [LaTex Live](https://www.latexlive.com/##) （在线编辑器）
+  - [Mathpix](https://mathpix.com/)（公式识别）
+  - [MathType](https://www.wiris.com/en/mathtype/)（公式编辑器）
+  - [LaTex Live](https://www.latexlive.com/##) （在线编辑器）
 
 </script></section><section data-markdown><script type="text/template">
 
@@ -126,14 +202,14 @@
 - 直接写字母就表示变量，\ 开头是命令（命令后面不要加字母，建议加空格）
 - 空格均会忽略，手动空格 \\, \\: \\; \ \quad \qquad，\\! 负空格
 - 上下标使用 ^ 和 _，超过一个字符需要用 {} 包裹
-    - 有些时候也表示子式，比如 \sum \int 等
+  - 有些时候也表示子式，比如 \sum \int 等
 - 特定函数有命令时要使用专门的命令，比如 \sin \log \lim 等
-    - 没有的时候可以用 \mathrm{...} 包裹
+  - 没有的时候可以用 \mathrm{...} 包裹
 - 内部要穿插文字时使用 \text{...} 包裹
-    - 不要滥用 \text，文字占多数时考虑分开为多个行内公式
+  - 不要滥用 \text，文字占多数时考虑分开为多个行内公式
 - 有两种样式，\displaystyle 和 \textstyle，即行间和行内
-    - 例如 \sum（巨算符）的上下标位置，\int 的高度，\frac 的分数样式等会有不同
-    - 也可以使用 \limits 和 \nolimits 改变上下标位置
+  - 例如 \sum（巨算符）的上下标位置，\int 的高度，\frac 的分数样式等会有不同
+  - 也可以使用 \limits 和 \nolimits 改变上下标位置
 
 </script></section><section data-markdown><script type="text/template">
 
@@ -176,15 +252,15 @@
 
 - 最常用 align 环境进行多行公式对齐
 - 用 & 分隔/标记对齐位置，用 \\\\ 换行
-    ```latex
-    \begin{align}
-    a &= b + c  &     g &= h + i \\
-      &= d + e + f  &   &= j
-    \end{align}
-    ```
+  ```latex
+  \begin{align}
+  a &= b + c  &     g &= h + i \\
+    &= d + e + f  &   &= j
+  \end{align}
+  ```
 - 用 \notag 取消编号，或使用 align* 环境
 - 可以使用 aligned 环境嵌套在其他环境中（如 equation）来提供对齐部分
-    - aligned 本身并不会进入数学模式，需要在数学模式中嵌套使用
+  - aligned 本身并不会进入数学模式，需要在数学模式中嵌套使用
 
 </script></section><section data-markdown><script type="text/template">
 
@@ -192,10 +268,10 @@
 
 - 可以使用内置的 array 环境，用法类似 tabular，左右需手动加括号
 - 推荐使用 amsmath 的矩阵环境
-    - matrix 不带定界符
-    - pmatrix 小括号；bmatrix 中括号；Bmatrix 大括号
-    - vmatrix 单竖线；Vmatrix 双竖线
-    - 写法同样 & 分隔，\\\\ 换行
+  - matrix 不带定界符
+  - pmatrix 小括号；bmatrix 中括号；Bmatrix 大括号
+  - vmatrix 单竖线；Vmatrix 双竖线
+  - 写法同样 & 分隔，\\\\ 换行
 
 ```latex
 \[
