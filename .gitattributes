@@ -3,3 +3,5 @@
 *.js linguist-detectable=false
 *.css linguist-detectable=false
 site/* linguist-vendored
+
+./slides/src/*
