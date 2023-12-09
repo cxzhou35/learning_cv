@@ -88,67 +88,6 @@
 
 </script></section><section data-markdown><script type="text/template">
 
-## LaTeX 命令、代码结构
-
-- 命令（控制序列）以 `\` 开头，对大小写敏感，如 `\LaTeX` -> $\LaTeX$
-- 有些命令会对后续内容产生影响，可以用 `{}` 限定作用范围，如 {\bf bold}
-- 命令可以接收参数，[] 中为可选参数，{} 中为必选参数，逗号分隔
-- 一组常见的命令是**环境**
-    ```latex
-    \begin{environment}[optional args]{required args}
-    ...
-    \end{environment}
-    ```
-- 文件结构
-    ```latex
-    \documentclass{article} % 百分号为注释
-    % 导言区，调用宏包、定义命令、进行文档设置等
-    \begin{document}
-    % 正文
-    \end{document} % 后续忽略
-    ```
-
-</script></section><section data-markdown><script type="text/template">
-
-## 文档类与宏包
-
-- LaTeX 文档开头必须包含 documentclass 指定文档类
-    - LaTeX 提供的基础文档类有 article report book 等
-    - 可以通过可选参数配置字号、纸张大小等
-        ```latex
-        \documentclass[11pt,a4paper,twoside]{article}
-        ```
-- 宏包相当于第三方库，可以引入更丰富的扩展功能
-    ```latex
-    \usepackage[options]{package}
-    \usepackage{package1, package2}
-    ```
-    - 需要确保已经安装，否则会报错
-    - TeXLive full 会自带大部分会用到的宏包
-    - `texdoc package` 可以查看宏包文档
-
-</script></section><section data-markdown><script type="text/template">
-
-## 字体样式和字号
-
-- 两种修改字体样式的命令 {\bfseries bold} \textbf{bold}
-    - 常用第二种
-    - 都是“内置”字体的不同样式，自定义字体自行查阅
-    - 常用的有：\textbf \textit \texttt \textsf \textsc \textsl
-- 一种形式的命令来修改字号 {\tiny some text}
-    - 从小到大：\tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
-
-```latex
-\textbf{bold} \textit{italic} \texttt{typewriter}
-\textsf{sans serif} \textsc{Small Caps} \textsl{slanted}
-
-{\tiny tiny} {\scriptsize scriptsize} {\footnotesize footnotesize}
-{\small small} {\normalsize normalsize} {\large large}
-{\Large Large} {\LARGE LARGE} {\huge huge} {\Huge Huge}
-```
-
-</script></section><section data-markdown><script type="text/template">
-
 
 ## 图片
 
