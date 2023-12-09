@@ -47,7 +47,7 @@ revealOptions:
 | 10.14 | 0 - 课程介绍和计算机视觉概论 | Zicx | [web](https://zicx.top/learning_cv/slides/site/2023-fall-pbfx/lec0/#/)/[pdf](./pdfs/lec0.pdf) |
 | 10.28 | 1 - 方向选择和科研入门       | Zicx | [web](https://zicx.top/learning_cv/slides/site/2023-fall-pbfx/lec1/#/)/[pdf](./pdfs/lec1.pdf) |
 | 11.25 | 2 - 文献检索和文献阅读       | Zicx | [web](https://zicx.top/learning_cv/slides/site/2023-fall-pbfx/lec2/#/)/[pdf](./pdfs/lec2.pdf) |
-| 12.9  | 3 - LaTeX 排版和文献引用     | Zicx | [web](https://zicx.top/learning_cv/slides/site/2023-fall-pbfx/lec3/#/)/[pdf]()                |
+| 12.9  | 3 - LaTeX 排版和文献引用     | Zicx | [web](https://zicx.top/learning_cv/slides/site/2023-fall-pbfx/lec3/#/)/[pdf](./pdfs/lec3.pdf)                |
 | ...   | 4 - 复现论文和阅读源码       | Zicx | [web]()/[pdf]()                                                                               |
 | ...   | 5 - 如何做学术报告           | Zicx | [web]()/[pdf]()                                                                               |
 | ...   | 6 - 科研经验分享             | Zicx | [web]()/[pdf]()                                                                               |
