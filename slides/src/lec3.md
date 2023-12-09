@@ -142,22 +142,6 @@ revealOptions:
 
 <!--v-->
 
-## 章节和目录
-
-- 应该对文档合理的分割为章、节、小节等，层次依次为
-    ```latex
-    \chapter{...} \section{...} \subsection{...} \subsubsection{...}
-    \paragraph{...} \subparagraph{...}
-    ```
-    - 其中 \chapter 仅适用于 book 和 report 文档类
-    - 可以加入可选参数表示短标题（显示在目录和页眉页脚中）
-    - 可以带星号表示不编号（正常会带三级编号）
-- 使用 \tableofcontents 生成目录（新的一章/一节）
-    - 生成目录需要编译两次
-    - 可以通过 \addcontentsline{toc}{*section*}{*name*} 手动添加目录项
-- \appendix 之后为附录，编号从 A 开始
-
-<!--v-->
 
 ## 图片
 
