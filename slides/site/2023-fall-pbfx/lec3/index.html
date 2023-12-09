@@ -1,17 +1,24 @@
----
-title: "lec3 - 论文阅读和科研探索(CV)"
-separator: <!--s-->
-verticalSeparator: <!--v-->
-theme: simple
-highlightTheme: github
-css: custom.css
-revealOptions:
-    transition: 'slide'
-    transitionSpeed: fast
-    center: false
-    slideNumber: "c/t"
-    width: 1000
----
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>lec3 - 论文阅读和科研探索(CV)</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/simple.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/github.css" />
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
+
+    <link rel="stylesheet" href="./assets/custom.css" />
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section ><section data-markdown><script type="text/template">
 
 <div class="middle center" style="position: relative;">
   <div style="width: 100%; display: inline-block; vertical-align: top; margin-top: 1em">
@@ -28,7 +35,7 @@ revealOptions:
   </div>
 </div>
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## News Highlights
 
@@ -36,7 +43,7 @@ revealOptions:
 
 <img src="./assets/lec3/convolution-animation-3x3-kernel.gif" align="center" width="80%" style="padding-left: 40pt;">
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## Table of Contents
 
@@ -48,7 +55,7 @@ revealOptions:
    1. 引用方法与格式
    2. 版权意识与版权声明
 
-<!--s-->
+</script></section></section><section ><section data-markdown><script type="text/template">
 
 <div class="middle center">
 <div style="width: 100%">
@@ -64,7 +71,7 @@ revealOptions:
 </div>
 </div>
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 1. 基础 LaTeX 语法
 
@@ -79,7 +86,7 @@ revealOptions:
   - [LaTeX StackExchange](https://tex.stackexchange.com/)
   - [LearnLaTeX.org](https://www.learnlatex.org/en/)
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## LaTeX 命令、代码结构
 
@@ -101,7 +108,7 @@ revealOptions:
   \end{document} % 后续忽略
   ```
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 文档类与宏包
 
@@ -120,7 +127,7 @@ revealOptions:
   - TeXLive full 会自带大部分会用到的宏包
   - `texdoc package` 可以查看宏包文档
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 字体样式和字号
 
@@ -140,7 +147,7 @@ revealOptions:
 {\Large Large} {\LARGE LARGE} {\huge huge} {\Huge Huge}
 ```
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 章节和目录
 
@@ -156,7 +163,7 @@ revealOptions:
   - 生成目录需要编译两次
 - \appendix 之后为附录，编号从 A 开始
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 图片
 
@@ -172,7 +179,7 @@ revealOptions:
 - 可以为 graphicx 或文档类设置 draft 选项
   - 显示等大图片框架，而非实际插入图片
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 2. 数学公式
 
@@ -188,7 +195,7 @@ revealOptions:
   - [MathType](https://www.wiris.com/en/mathtype/)（公式编辑器）
   - [LaTex Live](https://www.latexlive.com/##) （在线编辑器）
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 公式排版基础
 
@@ -204,7 +211,7 @@ revealOptions:
   - 例如 \sum（巨算符）的上下标位置，\int 的高度，\frac 的分数样式等会有不同
   - 也可以使用 \limits 和 \nolimits 改变上下标位置
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 常用数学符号
 
@@ -220,7 +227,7 @@ revealOptions:
 - 更多参考 lshort 或[符号大全](https://www.ctan.org/pkg/comprehensive)
 - [LaTeX 数学公式大全 - lowa_BattleShip](https://www.luogu.com.cn/blog/IowaBattleship/latex-gong-shi-tai-quan) 也是一个不错的整合
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 特殊数学字体
 
@@ -239,7 +246,7 @@ revealOptions:
 | \mathfrak{...} | $\mathfrak{ABCDEabcde1234}$ | 依赖 amssymb           |
 | \mathscr{...}  | $\mathscr{ABCDE}$           | 只有大写，依赖 mathrsfs |
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## align/aligned 对齐环境
 
@@ -255,7 +262,7 @@ revealOptions:
 - 可以使用 aligned 环境嵌套在其他环境中（如 equation）来提供对齐部分
   - aligned 本身并不会进入数学模式，需要在数学模式中嵌套使用
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 矩阵环境
 
@@ -277,7 +284,7 @@ a_{n1} & a_{n2} & \cdots & a_{nn}\\
 \]
 ```
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 3. 常用环境
 
@@ -297,7 +304,7 @@ a_{n1} & a_{n2} & \cdots & a_{nn}\\
 - 表格：tabular
 - 浮动体：figure table
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 列表
 
@@ -320,7 +327,7 @@ a_{n1} & a_{n2} & \cdots & a_{nn}\\
 \end{itemize}
 ```
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 对齐环境
 
@@ -341,7 +348,7 @@ a_{n1} & a_{n2} & \cdots & a_{nn}\\
 \raggedleft some text
 ```
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 代码块
 
@@ -364,7 +371,7 @@ int main() {
 \verb|\LaTeX| and \verb*|printf("Hello, world!\n");|
 ```
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 表格
 
@@ -381,7 +388,7 @@ int main() {
 - 合并单元格等更多更复杂的功能也支持，可以自行了解
 - 推荐使用 [TablesGenerator](https://www.tablesgenerator.com/) 生成
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 浮动体
 
@@ -398,7 +405,7 @@ int main() {
 - 内部使用 \caption{...} 添加标题（后可以接 \label{...} 用于引用）
 - 可以 \listoftables \listoffigures 生成目录
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 环境引用
 
@@ -411,7 +418,7 @@ int main() {
     - 定理环境内部使用
 - 不会记录编号的命令不可以使用（比如 \section*）
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 更多资料
 
@@ -431,7 +438,7 @@ int main() {
 - 符号大全：[The Comprehensive LaTeX Symbol List](https://www.ctan.org/pkg/comprehensive)
 - 手写查询：[Detexify](http://detexify.kirelabs.org/classify.html)
 
-<!--s-->
+</script></section></section><section ><section data-markdown><script type="text/template">
 
 <div style="position: absolute; top: 0; right: 0; ">
     <img src="./assets/zju_logo.svg" alt="Logo" style="max-height: 90%; max-width: 90%;">
@@ -445,7 +452,7 @@ int main() {
 </div>
 </div>
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 1. LaTeX 中的引用方法与格式
 
@@ -460,7 +467,7 @@ int main() {
 
 <div align=center><img src="./assets/lec3/google_scholar_ref_format.png" style="zoom:30%" alt=""></div>
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 通过 \bibitem 指令引用
 
@@ -481,7 +488,7 @@ int main() {
 - 不利于文献数据库的复用 ❌
 - 推荐使用第二种方法 -> 通过 .bib 文件引用 ✅
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 通过 .bib 文件引用
 
@@ -498,7 +505,7 @@ int main() {
 }
 ```
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 2. 版权意识与版权声明
 
@@ -512,7 +519,7 @@ int main() {
     <div align=center><img src="./assets/lec3/website_example.png" style="zoom:70%" alt=""></div>
 - 在其他使用了他人成果的地方，都请注明来源，尊重他人的劳动成果
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## 重视 License
 
@@ -523,7 +530,7 @@ int main() {
 
 <div align=center><img src="./assets/lec3/cec_ide_example.png" style="zoom:32%" alt=""></div>
 
-<!--v-->
+</script></section><section data-markdown><script type="text/template">
 
 ## License 说明
 
@@ -541,7 +548,7 @@ GitHub 对 License 的说明：
 - MPL License 2.0
 - GNU GPL v3.0
 
-<!--s-->
+</script></section></section><section  data-markdown><script type="text/template">
 
 <div style="position: absolute; top: 0; right: 0; ">
     <img src="./assets/zju_logo.svg" alt="Logo" style="max-height: 90%; max-width: 90%;">
@@ -558,3 +565,119 @@ GitHub 对 License 的说明：
 
 </div>
 </div>
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+        function extend() {
+            var target = {};
+            for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        // default options to init reveal.js
+        var defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default',
+            slideNumber: true,
+            menu: {
+                themes: false,
+                width: "wide",
+                transitions: false,
+                markers: true,
+                hideMissingTitles: true,
+                openButton: true,
+                openSlideNumber: true,
+                custom: [
+                    { title: 'Lectures', icon: '<i class="fas fa-external-link-alt">', content: getLecturesMenu() },
+                ]
+            },
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMenu
+            ]
+        };
+
+        // options from URL query string
+        var queryOptions = Reveal().getQueryHash() || {};
+
+        var options = extend(defaultOptions, {"transition":"slide","transitionSpeed":"fast","center":false,"slideNumber":"c/t","width":1000}, queryOptions);
+
+        function getLecturesMenu() {
+            var lectures = [
+                { name: "#0 课程介绍和计算机视觉概论", src: "../lec0/" },
+                { name: "#1 方向选择和科研入门", src: "../lec1/" },
+                { name: "#2 文献检索和文献阅读", src: "../lec2/" },
+                { name: "#3 LaTeX排版和文献引用", src: "../lec3/" },
+                // { name: "#1 Shell 基础及 CLI 工具推荐", src: "../lec1/"},
+                // { name: "#2 Git/GitHub 基础介绍", src: "../lec2/"},
+                // { name: "#3 Markdown 语法及应用", src: "../lec3/"},
+                // { name: "#4 LaTeX 排版简要介绍", src: "../lec4/"},
+                // { name: "#5 如何排出规范、美观的文档", src: "../lec5/"},
+                // { name: "#6 网络/网站基础知识概述", src: "../lec6/"},
+            ]
+            var lecturesMenu = '<ul class="slide-menu-items">';
+            for (var i = 0; i < lectures.length; i++) {
+                lecturesMenu += '<li class="slide-menu-item"><a href="' + lectures[i].src + '" style="text-decoration:none">' + lectures[i].name + '</a></li>';
+            }
+            lecturesMenu += '</ul>';
+            return lecturesMenu;
+        }
+    </script>
+
+    <script src="https://cdn.tonycrane.cc/heti/heti.js"></script>
+    <script src="./assets/heti_worker.js"></script>
+
+    <script>
+        Reveal.initialize(options).then(() => {
+            document
+                .querySelector(".backgrounds")
+                .setAttribute(
+                    "style",
+                    document.querySelector(".slides").style.cssText,
+                );
+        });
+        Reveal.on("overviewshown", (event) => {
+            document.querySelector(".backgrounds").setAttribute("style", "");
+        });
+        Reveal.on("overviewhidden", (event) => {
+            document
+                .querySelector(".backgrounds")
+                .setAttribute(
+                    "style",
+                    document.querySelector(".slides").style.cssText,
+                );
+        });
+        Reveal.on("resize", (event) => {
+            document
+                .querySelector(".backgrounds")
+                .setAttribute(
+                    "style",
+                    document.querySelector(".slides").style.cssText,
+                );
+        });
+    </script>
+</body>
+
+</html>
